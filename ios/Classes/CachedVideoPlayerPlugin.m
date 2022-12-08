@@ -145,16 +145,8 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
   }
   videoComposition.renderSize = CGSizeMake(width, height);
 
-  float nominalFrameRate = videoTrack.nominalFrameRate;
-
-  int fps = 30;
-
-  if (nominalFrameRate > 0)
-  {
-    fps = (int) ceil(nominalFrameRate);
-  }
-
-  videoComposition.frameDuration = CMTimeMake(1, fps);
+  // EYWAA
+  videoComposition.frameDuration = CMTimeMake(1, 120);
 
   return videoComposition;
 }
